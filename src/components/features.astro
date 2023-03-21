@@ -1,68 +1,129 @@
 ---
-// @ts-ignore
-import { Icon } from "astro-icon";
 
-const features = [
+const cme = [
   {
-    title: "Bring Your Own Framework",
-    description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-    icon: "bx:bxs-briefcase",
+    title: "ECG Interpretation",
+    credits: "2",
+    link: "https://www.freecodecamp.org/"
   },
   {
-    title: "100% Static HTML, No JS",
-    description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-    icon: "bx:bxs-window-alt",
+    title: "Workplace Violence",
+    credits: "10",
+    link: ""
   },
   {
-    title: "On-Demand Components",
-    description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.  ",
-    icon: "bx:bxs-data",
+    title: "ECG Interpretation",
+    credits: "2",
+    link: "https://www.freecodecamp.org/"
   },
   {
-    title: "Broad Integration",
-    description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
-    icon: "fa-solid:charging-station",
+    title: "Workplace Violence",
+    credits: "10",
+    link: ""
   },
   {
-    title: "SEO Enabled",
-    description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
-    icon: "bx:bxs-file-find",
+    title: "Workplace Violence",
+    credits: "10",
+    link: ""
   },
   {
-    title: "Community",
-    description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
-    icon: "bx:bxs-user",
+    title: "Workplace Violence",
+    credits: "10",
+    link: ""
   },
 ];
+
+const manda = [
+  {
+    title: "Something",
+    description: "LP15 training",
+    link: ""
+  },
+  {
+    title: "Something else",
+    description: "Something",
+    link: ""
+  },
+  {
+    title: "Something else",
+    description: "Something",
+    link: ""
+  },
+  {
+    title: "Something else",
+    description: "Something",
+    link: ""
+  },
+  {
+    title: "Something else",
+    description: "Something",
+    link: ""
+  },
+  {
+    title: "Something else",
+    description: "Something",
+    link: ""
+  },
+];
+
 ---
 
-<div class="mt-16 md:mt-0">
+<div class="text-center mt-16 md:mt-0">
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
     Further your education
   </h2>
   <p class="text-lg mt-4 text-slate-600">
-    <span class="font-bold text-blue1">Beyond</span><span class="text-red1">thebox</span> Astro renders your entire page to static HTML, removing all JavaScript from your final build by default. Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!
+    <span class="font-bold text-blue1">Bumper</span><span class="text-red1">talk</span> allows you to take what you learn Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, voluptatum! Labore aliquam provident officiis tenetur rerum deserunt in, similique, ipsa sint quisquam dolore harum natus nesciunt, iusto eos maiores voluptates!
   </p>
 </div>
 
-<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
-  {
-    features.map((item) => (
-      <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
-          <Icon class="text-white" name={item.icon} />
+  <div class="lg:grid lg:grid-cols-2 gap-2 m-8">
+    <div>
+    <div class='mb-4 lg:mb-0 border-4 border-blue-400 rounded-lg'>
+    <h3 class="font-extrabold text-center p-2">CME Credits</h3>
+    {
+      cme.map((item) => (
+        <div class="p-2 items-start">
+          <div>
+            <a href={item.link} target = '_blank'>
+            <h3 class="font-normal text-md inline">{item.title}</h3></a>
+            <p class="text-slate-500 mt-2 leading-relaxed">{item.credits + ' credits'}</p>
+          </div>
         </div>
-        <div>
-          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
-          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
-        </div>
+      ))
+    }
+    </div>
+  </div>
+  
+    <div class='border-4 border-blue-400 rounded-lg'>
+    <h3 class="font-extrabold p-2 text-center" id="manda">Mandatory Courses</h3>
+      {
+        manda.map((item) => (
+          <div class="p-2 items-start">
+            <div>
+              <a href="{item.link} target = '_blank'">
+              <h3 class="font-normal text-md inline">{item.title}</h3></a>
+              <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+            </div>
+          </div>
+        ))
+      }
       </div>
-    ))
+  </div>
+
+<style>
+  .btn {
+    @apply font-bold py-2 px-4 rounded;
   }
-</div>
+  .btn-blue {
+    @apply bg-blue-500 text-white text-center;
+  }
+  .btn-blue:hover {
+    @apply bg-blue-700;
+  }
+</style>
+
+<script is:inline>
+
+
+</script>

@@ -2,26 +2,6 @@
 import Container from "@components/container.astro";
 import Link from "@components/ui/link.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
-
-const menuitems = [
-
-  {
-    title: "CME Credits",
-    path: "/pricing",
-  },
-  {
-    title: "Snippet",
-    path: "/about",
-  },
-  {
-    title: "Courses",
-    path: "/blog",
-  },
-  {
-    title: "Contact",
-    path: "/contact",
-  },
-];
 ---
 
 <Container>
@@ -38,21 +18,8 @@ const menuitems = [
         </div>
       </div>
       <MenuItems class=" hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
-        <ul class="flex flex-col lg:flex-row lg:gap-3">
-          {
-            menuitems.map((item) => (
-                  <li>
-                    <a
-                      href={item.path}
-                      class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900">
-                      {item.title}
-                    </a>
-                  </li>
-            ))
-          }
-        </ul>
         <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="#" style="login" block size="md" >Log in</Link>
+          <Link href="#" style="login" block size="md" onclick='showLoginModal()'>Log in</Link>
           <Link href="#" style="signup" size="md" block>Sign up</Link>
         </div>
       </MenuItems>
@@ -60,9 +27,26 @@ const menuitems = [
     <!-- Large Menu -->
     <div>
       <div class="hidden lg:flex items-center gap-4">
-        <Link href="/loginmodal" style="login" size="md" class="font-semibold">Log in</Link>
+        <Link href="#" style="login" size="md" class="font-semibold" onclick='showLoginModal()'>Log in</Link>
         <Link href="#" style="signup" size="md" class="font-semibold">Sign up</Link>
       </div>
     </div>
   </header>
 </Container>
+
+<script is:inline>
+
+
+function showLoginModal() {
+  loginModal.showModal();
+  const closeSvg = document.getElementById('closeSvg');
+  closeSvg.addEventListener('click', () => {closeLoginModal()});
+}
+
+function closeLoginModal(){
+  loginModal.close()
+}
+
+
+</script>
+
